@@ -54,7 +54,7 @@ int main()
 	while (ch > EOF)
 	{
 		ch = getc(stream);
-		if (ch > 0)
+		if (ch != EOF)
 		{
 			histogram[ch]++;
 		}
