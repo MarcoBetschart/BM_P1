@@ -41,7 +41,7 @@ int main()
 	FILE* stream = NULL;
 	_set_errno(0);
 
-	errno_t err = fopen_s(&stream, "C:\\Users\\marco\\OneDrive\\Dokumente\\HFIE\\Strukturierte Progammierung\\Histogram\\Alice Adventure in Wonderland.txt", "r");
+	errno_t err = fopen_s(&stream, "C:\\Users\\marco\\OneDrive\\Dokumente\\HFIE\\Strukturierte Progammierung\\Repo\\BM_P1\\Histogram\\Alice Adventure in Wonderland.txt", "r");
 	if (err != 0) {
 		printf("Error occured %i", err);
 		return 1;
