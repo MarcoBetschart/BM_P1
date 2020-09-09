@@ -50,14 +50,19 @@ int main()
 	assert(stream != NULL);
 	int ch = getc(stream);
 	int histogram[256] = { 0 };
+	int maxSizeLetter = 0;
 
 	while (ch > EOF)
 	{
-		ch = getc(stream);
 		if (ch != EOF)
 		{
 			histogram[ch]++;
+			if (histogram[ch] > histogram[maxSizeLetter])
+			{
+				maxSizeLetter = ch;
+			}
 		}
+		ch = getc(stream);
 	}
 
 	for (int i = 0; i < 256; i++) {
@@ -66,6 +71,7 @@ int main()
 			printf("Zeichen \'%c\' = %d\n", i, histogram[i]);
 		}
 	}
+	printf("Grösste Anzahl von Buchstabe \'%c\' = %d\n", maxSizeLetter, histogram[maxSizeLetter]);
 
 	fclose(stream);
 }
