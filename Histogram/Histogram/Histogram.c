@@ -5,6 +5,12 @@
 #include <stdlib.h>
 #include <errno.h>
 #include <assert.h>
+#include <stdint.h>
+
+int FindMaxInArray();
+
+uint32_t histogram[256];
+
 
 int main()
 {
@@ -40,7 +46,7 @@ int main()
 	// Aufgabe 3
 	FILE* stream = NULL;
 	_set_errno(0);
-
+	
 	errno_t err = fopen_s(&stream, "C:\\Users\\marco\\OneDrive\\Dokumente\\HFIE\\Strukturierte Progammierung\\Repo\\BM_P1\\Histogram\\Alice Adventure in Wonderland.txt", "r");
 	if (err != 0) {
 		printf("Error occured %i", err);
@@ -49,7 +55,6 @@ int main()
 
 	assert(stream != NULL);
 	int ch = getc(stream);
-	int histogram[256] = { 0 };
 	int maxSizeLetter = 0;
 
 	while (ch > EOF)
@@ -74,4 +79,16 @@ int main()
 	printf("Grösste Anzahl von Buchstabe \'%c\' = %d\n", maxSizeLetter, histogram[maxSizeLetter]);
 
 	fclose(stream);
+}
+
+int FindMaxInArray()
+{
+	int maxIndex = histogram[0];
+	
+	for (int i = 1; i < 256; i++) {
+		if (histogram[i] > 0) {
+
+		}
+	}
+	return maxIndex;
 }
