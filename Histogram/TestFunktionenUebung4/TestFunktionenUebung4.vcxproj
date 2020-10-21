@@ -21,8 +21,8 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{189887aa-fbf7-4806-b26a-69c8ee221a8c}</ProjectGuid>
-    <RootNamespace>Uebung4</RootNamespace>
+    <ProjectGuid>{38e43a12-3012-455b-bf16-e0df12a990d8}</ProjectGuid>
+    <RootNamespace>TestFunktionenUebung4</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -139,7 +139,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Uebung4.c" />
+    <ClCompile Include="TestFunktionenUebung4.c" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

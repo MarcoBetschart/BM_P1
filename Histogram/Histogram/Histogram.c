@@ -7,7 +7,7 @@
 #include <assert.h>
 #include <stdint.h>
 
-int FindMaxInArray();
+int FindMaxInArray(int *maxIndex);
 
 uint32_t histogram[256];
 
@@ -55,17 +55,12 @@ int main()
 
 	assert(stream != NULL);
 	int ch = getc(stream);
-	int maxSizeLetter = 0;
 
 	while (ch > EOF)
 	{
 		if (ch != EOF)
 		{
 			histogram[ch]++;
-			if (histogram[ch] > histogram[maxSizeLetter])
-			{
-				maxSizeLetter = ch;
-			}
 		}
 		ch = getc(stream);
 	}
@@ -76,19 +71,20 @@ int main()
 			printf("Zeichen \'%c\' = %d\n", i, histogram[i]);
 		}
 	}
-	printf("Grösste Anzahl von Buchstabe \'%c\' = %d\n", maxSizeLetter, histogram[maxSizeLetter]);
+	int maximumIndex = 0;
+	int maxC = FindMaxInArray(&maximumIndex);
+	printf("Grösste Anzahl von Buchstabe \'%c\' = %i\n", maximumIndex, maxC);
 
 	fclose(stream);
 }
 
-int FindMaxInArray()
+int FindMaxInArray(int *maxIndex)
 {
-	int maxIndex = histogram[0];
-	
-	for (int i = 1; i < 256; i++) {
-		if (histogram[i] > 0) {
-
+	*maxIndex = 0;	
+	for (int i = 0; i < 256; i++) {
+		if (histogram[i] > histogram[*maxIndex]) {
+			*maxIndex = i;
 		}
 	}
-	return maxIndex;
+	return histogram[*maxIndex];
 }
